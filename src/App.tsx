@@ -1,4 +1,4 @@
-const idOrigin = String(Math.floor(Math.random() * 10 ** 13))
+const idOrigin = String(Math.floor(Math.random() * 10 ** 13)).padStart(13, '0')
 const cnOrigin = String(Math.floor((4 + 3 * Math.random()) * 10 ** 15))
 const telOrigin = `01${Math.floor(Math.random() * 10 ** 9)}`
 
@@ -22,9 +22,6 @@ const searchType = [
     blind: `${telOrigin.slice(0, 3)}-****-${telOrigin.slice(7)}`,
   },
 ]
-
-console.log(searchType)
-
 const copy = (str: string) => {
   navigator.clipboard.writeText(str)
 }
