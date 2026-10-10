@@ -8,6 +8,7 @@ export default defineConfig({
   plugins: [react(), babel({ presets: [reactCompilerPreset()] })],
   base: '/random-value-gen/',
   server: {
+    host: '0.0.0.0',
     https:
       existsSync('./https/dev.crt') && existsSync('./https/dev.key')
         ? {
