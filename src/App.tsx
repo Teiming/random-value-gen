@@ -33,8 +33,17 @@ export default function App() {
         {searchType.map(({ type, origin, seperated, blind }) => {
           return (
             <div key={type}>
-              <h3>{type}</h3>
+              <label
+                htmlFor={type}
+                onClick={e => {
+                  e.preventDefault()
+                  copy(seperated)
+                }}
+              >
+                {type}
+              </label>
               <input
+                id={type}
                 type="text"
                 inputMode="numeric"
                 value={blind}
